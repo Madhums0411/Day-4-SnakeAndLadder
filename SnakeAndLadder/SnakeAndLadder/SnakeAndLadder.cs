@@ -34,6 +34,11 @@ namespace SnakeAndLadderProblem
                         playerPosition += dieRolled;
                         Console.WriteLine(" Dice Rolls Number : +{0} ", dieRolled);
                         Console.WriteLine("Ladder: " + playerPosition);
+                        if(playerPosition > WINNING_POSITION)
+                        {
+                            playerPosition -= dieRolled;
+                        }
+                        Console.WriteLine("Player position:" + playerPosition);
                         break;
 
                     case SNAKE:
@@ -48,7 +53,7 @@ namespace SnakeAndLadderProblem
                         break;
 
                 }
-                if (playerPosition >= WINNING_POSITION)
+                if (playerPosition == WINNING_POSITION)
                 {
                     Console.WriteLine("Player Won the Game");
                 }
